@@ -7,6 +7,7 @@ date-released: "2026-11-11"
 authors:
   - family-names: Barbeau
     given-names: Oliver
+doi: 10.5281/zenodo.24150903
 license: CC-BY-4.0
 repository: "https://github.com/OliverBarbeau/midterm-messaging-2026-data"
 url: "https://barbeau.dev/midterms-2026"

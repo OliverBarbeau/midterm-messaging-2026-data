@@ -2,7 +2,7 @@
 
 What about 300 candidates for the U.S. House, Senate and governor said on their own campaign channels in the 2026 midterms, August 1 to Election Day (November 3, 2026), with a topic, tone and target label on every message. This is the data behind the live tracker at https://barbeau.dev/midterms-2026, built by Oliver Barbeau.
 
-Built 2026-11-11: 48,805 messages from 298 candidates in 147 races; 48,805 of them labeled.
+DOI: [10.5281/zenodo.24150903](https://doi.org/10.5281/zenodo.24150903) (all versions). Built 2026-11-11: 48,805 messages from 298 candidates in 147 races; 48,805 of them labeled.
 
 ## Contents
 
@@ -102,7 +102,9 @@ Both tools write `text_matches` = 1 when the fetched text is exactly what was la
 
 ## Citation
 
-> Barbeau, Oliver. 2026. *Midterm Messaging 2026: corpus and labels*, version 1.0.1. https://github.com/OliverBarbeau/midterm-messaging-2026-data
+> Barbeau, Oliver. 2026. *Midterm Messaging 2026: corpus and labels*, version 1.0.1. Zenodo. https://doi.org/10.5281/zenodo.24150903
+
+That DOI always resolves to the latest version; Zenodo lists each version's own DOI. The files are also at https://github.com/OliverBarbeau/midterm-messaging-2026-data.
 
 The tracker built on this data is at https://barbeau.dev/midterms-2026. Corrections and questions: the email address in its footer, or an issue on this repository.
 
