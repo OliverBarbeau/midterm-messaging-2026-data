@@ -73,6 +73,10 @@ The model **under-labels** more than it mislabels: precision is high and recall 
 
 An independent check on the main party differences: for every headline area on the tracker, the gap between parties has the same sign counted by plain keywords as by the labeler's tags (on websites and on X).
 
+### How the model was chosen
+
+Before the corpus was labeled, seven labelers were compared on a tuning set of 53 hand-labeled messages, each given the same codebook and output format: Claude Haiku 4.5, Sonnet 5 and Opus 5; Gemini 3.1 and 3.5 Flash-Lite; Jev, a classifier that answers one typed question per codebook decision; and a keyword baseline. On topics, Sonnet 5, Opus 5 and Gemini 3.1 Flash-Lite reached about 0.65–0.67, Haiku 4.5 about 0.60–0.62, Jev 0.52 and the keywords 0.38 (on 51 messages, gaps under about 0.03 are noise). That the largest model, Opus 5, did no better suggests the hand labels themselves cap agreement near that level. Packing ten messages into one request made Haiku label each one more thinly (0.53, against 0.60 at one per request), while Sonnet 5 held its level at ten, which brought its cost down to about Haiku's at one. No model repeated itself exactly: between identical runs, 6–10% of topic labels changed for Haiku, about 17% for Sonnet 5 and 19% for Gemini, with steady accuracy, so each message was labeled once and that label is final. The two finalists, Sonnet 5 at ten messages per request and Haiku 4.5 at one, were then scored once on the blind test set. Sonnet 5 led on topics (0.66 against 0.61), whose words (94% against 86%), tone (65% against 57%) and the opponent target (0.93 against 0.81), and was chosen on accuracy alone. Labeling the corpus cost about $0.001 per message.
+
 ## Getting the text
 
 | Channel | How |
@@ -98,10 +102,11 @@ Both tools write `text_matches` = 1 when the fetched text is exactly what was la
 
 ## Citation
 
-> Barbeau, Oliver. 2026. *Midterm Messaging 2026: corpus and labels*, version 1. https://github.com/OliverBarbeau/midterm-messaging-2026-data
+> Barbeau, Oliver. 2026. *Midterm Messaging 2026: corpus and labels*, version 1.0.1. https://github.com/OliverBarbeau/midterm-messaging-2026-data
 
 The tracker built on this data is at https://barbeau.dev/midterms-2026. Corrections and questions: the email address in its footer, or an issue on this repository.
 
 ## Changes
 
+- **v1.0.1 (2026-11-11):** documentation only: how the labeling model was chosen, and metadata for a Zenodo DOI. The data files are unchanged.
 - **v1 (2026-11-11):** first release. Messages August 1 – November 3, 2026.

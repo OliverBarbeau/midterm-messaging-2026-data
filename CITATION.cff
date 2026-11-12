@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Midterm Messaging 2026: corpus and labels"
+version: "1.0.1"
+date-released: "2026-11-11"
+authors:
+  - family-names: Barbeau
+    given-names: Oliver
+license: CC-BY-4.0
+repository: "https://github.com/OliverBarbeau/midterm-messaging-2026-data"
+url: "https://barbeau.dev/midterms-2026"
+keywords:
+  - elections
+  - 2026 midterms
+  - political communication
+  - campaign messaging
+  - text as data
+abstract: "Campaign messages from 2026 U.S. House, Senate and governor candidates on X, Bluesky, YouTube and their websites, August 1 to November 3, 2026, each labeled for topic, tone, targets and stance, with the codebook and hand labels."

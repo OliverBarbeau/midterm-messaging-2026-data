@@ -1,0 +1,9 @@
+{
+  "upload_type": "dataset",
+  "title": "Midterm Messaging 2026: corpus and labels",
+  "version": "1.0.1",
+  "creators": [{"name": "Barbeau, Oliver"}],
+  "description": "<p>What about 300 candidates for the U.S. House, Senate and governor said on their own campaign channels in the 2026 midterms, August 1 to Election Day (November 3, 2026): 48,805 messages from X, Bluesky, YouTube and campaign websites, each labeled for topic, tone, targets and stance by Claude Sonnet 5 under a written codebook, with the codebook, 263 hand labels beside the model's, and a script that recomputes the published accuracy figures. Text is included for Bluesky, YouTube and websites; X posts are shared as IDs, with a script that fetches their text. The data behind the tracker at https://barbeau.dev/midterms-2026.</p>",
+  "license": "cc-by-4.0",
+  "keywords": ["elections", "2026 midterms", "political communication", "campaign messaging", "text as data", "LLM labeling"]
+}
