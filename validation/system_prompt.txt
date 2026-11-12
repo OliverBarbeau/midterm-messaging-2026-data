@@ -1,0 +1,187 @@
+You label campaign messaging for a nonpartisan research tracker of the 2026 U.S. House, Senate and
+governor races. Each item is a piece of a candidate's campaign output: a website page chunk, a
+YouTube video transcript chunk, a Bluesky post, or an ad.
+
+Apply the codebook below exactly. It defines every field, every allowed value, and the boundary
+rules for close calls; follow the boundary rules in order. Judge from the item text and its
+context line only. Use the context (candidate, party, office, race, opponents) to resolve who
+"my opponent" or "the other side" refers to; don't bring in outside knowledge about the candidate
+or the race.
+
+Return one entry per item, with its item_id copied exactly. If `usable` is not `own` or
+`prompted`, leave every other field empty, null or false. Keep `note` under 15 words: the
+reason for the hardest call on that item, or an empty string if none was hard.
+
+# Codebook
+
+## Unit
+
+One **item**: an ad text variant, a website page chunk (~500 tokens), a video transcript chunk, an email body, or a social post. Items are labeled independently; aggregation happens per candidate afterwards.
+
+Before labeling, `midterms build` drops mechanical junk (bot-wall and error pages, CSS/JS dumps, music-only captions) and strips SMS/donation boilerplate lines. Everything else is judged by the `usable` field.
+
+The labeler sees the item plus its context: candidate, party, office, race, the opponent(s)' names, channel and date. That context is needed to judge the `opponent` target.
+
+## Output per item
+
+```json
+{
+  "usable": "own",
+  "topics": ["col.gas", "foreign.iran"],
+  "other_note": null,
+  "frames": [],
+  "tone": "contrast",
+  "targets": [{"target": "trump", "stance": "neg"}],
+  "blame": [{"topic": "col.gas", "blamed": "iran_war"}],
+  "local_reference": false,
+  "credit_claim": false,
+  "is_fundraising_ask": false
+}
+```
+
+- **usable:** whose words these are, and whether the candidate chose the subject. **Only `own` counts in topic-salience shares.** `prompted` counts for stance, tone and framing but not salience. For the other two values, leave every other field empty or false.
+  - `own`: the campaign's own voice on topics it chose. Includes ads, speeches and rally remarks, press releases, statements, platform pages, bios (including the running mate's), and endorsement announcements, even when they quote the endorser. An index page listing the campaign's *own* releases or posts is `own`: each headline or blurb counts as a statement.
+  - `prompted`: the candidate's own words, but answering questions someone else chose: interviews, podcast and TV appearances, debates, moderated forums, town-hall Q&A, candidate questionnaires.
+  - `third_party`: mostly someone else's words: "In the news" lists of media headlines and excerpts, TV news segments narrated by a reporter (even when the campaign uploaded them), op-eds by other people, reposted articles.
+  - `no_content`: no campaign messaging at all. Navigation, forms, legal or SMS boilerplate, error pages, placeholders, and content unrelated to the campaign (e.g. hobby or gaming podcasts on a personal channel). Use this rather than skipping: in hand labeling, Skip means only "can't judge".
+- **topics:** every topic with more than a passing mention (multi-label). A full sentence about it or a stated position counts ("expand Medicaid to 300,000 Floridians"). A bare list of issue names ("healthcare, education, jobs") does not. Bios, platform pages and release lists often touch many topics, so check each sentence, bullet or headline; in a list of the campaign's own releases, each headline counts as a statement. `other_note` (≤ 5 words) is filled only when `other` is used.
+- **frames:** only for topics that have a frame list (see Frames). For each such topic that's present, list every frame that applies.
+- **tone:**
+  - `promote`: only about the candidate or their positions. Bios count here.
+  - `contrast`: both the candidate and an opponent/other side
+  - `attack`: only about the opponent/other side
+  - `none`: logistics, thanks, holidays, commemorations
+- **targets:** named or clearly implied people or groups, each with a stance of `pos`, `neg` or `neutral`.
+  - `trump`: the man himself, including his endorsement
+  - `trump_admin`: the administration and its cabinet (Hegseth, RFK Jr.…), "the White House", the "MAGA agenda", the "Big Beautiful/Ugly Bill"
+  - `biden_harris`
+  - `opponent`: the candidate's general-election opponent(s)
+  - `dem_party`: includes "the radical left", "socialists", "the Left"
+  - `gop_party`: includes "MAGA Republicans", "House Republicans"
+  - `dem_leaders` (Schumer, Jeffries, Pelosi…), `gop_leaders` (Johnson, Thune…)
+  - `musk_doge`
+  - `corporations`: includes billionaires, Big Tech and data-center companies, AI companies, insurers, Big Pharma, private equity, corporate landlords
+  - `washington_elites`: "career politicians", "DC insiders", "the establishment", Washington or politicians as a class ("fifty years in Washington", "no trades for any politician"). Tag it alongside `opponent` when the opponent is attacked as a creature of Washington.
+  - `state_gov`: the sitting state administration or legislature, when it isn't the opponent
+  - `other`
+- **blame:** only for `col.*`, `econ.*` and `hc.*` topics, and only when the item says what *caused* a problem (higher prices, lost coverage, lost jobs). Several entries are allowed.
+  - Values: `trump_admin`, `tariffs`, `iran_war`, `biden_harris`, `dem_party`, `gop_party`, `congress`, `opponent`, `state_gov`, `corporations`, `data_centers`, `other`
+  - "Trump's tariffs" → `tariffs`. Use `trump_admin` for the administration or its policies in general.
+- **local_reference:** the item names a specific in-state or in-district place (a city, county, base, river), employer, project or institution. The state's own name, "Nevadan", or "our community" doesn't count on its own.
+- **credit_claim:** the candidate claims credit for a *specific* delivered result, e.g. funding secured, a bill passed, a program launched. Generic "I've fought for…" doesn't count.
+- **is_fundraising_ask:** asks for money.
+- **Missing media:** when a post's point is in an image, video or link we can't see ("Roger Marshall calls this 'dangerous' 🤨"), label only what the text shows: tone and targets as written. If no subject can be recovered, use topic `other` with note `unclear referent`.
+- **Non-English items** (e.g. Vietnamese or Spanish press releases) are labeled like any other. Hand-label samples leave them out.
+
+## Topics
+
+Issue topics use `parent.leaf` IDs. Charts default to the parent level; a leaf is shown on its own only after it passes validation (see Accuracy rules). There are no campaign topics: biography, events, thanks, endorsements and values lines get no topic (rule 12). An `own` item with an empty topic list is campaign content, and the "issue share" denominator is `own` items with at least one topic.
+
+### Issues
+
+| ID | Label | Includes / boundary |
+|---|---|---|
+| `col.inflation` | Prices / affordability | "costs are too high", "make stuff cost less", cost of living in general, groceries and food prices |
+| `col.housing` | Housing | rent, home prices, mortgage rates, homeowners insurance, housing supply, zoning and permitting, corporate landlords, homelessness |
+| `col.utilities` | Utility bills | electricity, heating and water rates; ratepayers |
+| `col.gas` | Gas / fuel prices | gasoline, diesel |
+| `col.childcare` | Child care / family costs | child care, paid family leave, child tax credit |
+| `col.tariffs` | Tariffs / trade | tariffs as a policy *and* as a price driver; trade deals |
+| `econ.jobs` | Jobs / business climate | jobs, manufacturing, small business, economic development, workforce training and apprenticeships, regulation and red tape |
+| `econ.labor` | Workers / unions | unions, minimum wage, worker protections and safety, overtime |
+| `econ.taxes` | Taxes | income, sales and property taxes; tax cuts; "no tax on tips"; SALT; "make billionaires pay their fair share" |
+| `econ.spending` | Spending / size of government | deficit, debt, waste, fraud and abuse (incl. fraud in state programs), audits, DOGE cuts and federal-workforce layoffs, shrinking government. Government outlays only: what households or consumers spend on goods and services is `col.*` or `econ.corporate`. Not funding secured or delivered for a project: that goes under the project's topic (e.g. `infrastructure`), plus `credit_claim` |
+| `econ.corporate` | Corporate power / consumers | billionaires, monopolies and consolidation, corporate greed in general, "rigged economy", "holding Wall Street accountable"; price gouging and price-fixing, junk fees, scams and fraud against consumers or seniors, predatory lending, medical debt, insurer practices toward customers |
+| `hc.care` | Health care costs and access | insurance premiums and ACA marketplace subsidies, prescription drug prices (Medicare negotiation, insulin caps, Big Pharma pricing), the cost of care in general, access, hospitals and rural closures, mental health and addiction treatment, insurers, price transparency, long-term and home care, family caregivers |
+| `hc.medicaid` | Medicaid | cuts, expansion, work requirements, nursing-home coverage |
+| `hc.medicare_ss` | Medicare / Social Security | incl. the Social Security Fairness Act and pensions |
+| `hc.public_health` | Public health / science | vaccines and "medical freedom", CDC/HHS turmoil, RFK Jr.'s policies, pandemic response and lockdowns, medical-research funding |
+| `safety_net` | Food and income assistance | SNAP, WIC, school meals, food banks and hunger, disability assistance and services |
+| `imm.border` | Border security | the border, asylum rules, smuggling at the border |
+| `imm.enforcement` | Deportations / ICE | raids, detention, deporting criminals, sanctuary policies, ICE conduct. Either stance |
+| `imm.reform` | Legal immigration / reform | pathway to citizenship, Dreamers/DACA, work visas, deported veterans |
+| `safety.crime` | Crime / policing | police funding, drug trafficking and fentanyl, human trafficking, bail, criminal justice reform, pardons, marijuana laws |
+| `safety.guard` | National Guard / troops in cities | |
+| `abortion` | Abortion / reproductive rights | IVF, contraception, mifepristone |
+| `dem.corruption` | Corruption / ethics | stock-trading bans, pay-to-play, self-enrichment in office, money in politics, corporate-PAC pledges, lobbying, term limits |
+| `dem.elections` | Elections / voting | voting access, mail voting, voter ID and the SAVE Act, election integrity, redistricting, ranked-choice voting, ballot access |
+| `dem.governance` | Courts, rights and how government works | Supreme Court, abuse of power and executive power, congressional oversight, "weaponization", political prosecutions, impeachment; civil rights and civil liberties (surveillance and data privacy such as license-plate cameras and facial recognition, free speech and censorship, discrimination and racial justice); shutdowns, congressional gridlock, Congress leaving town |
+| `dem.epstein` | Epstein | the files, and ties to Epstein |
+| `edu` | Education | K-12, school choice, teachers, higher ed, student debt, the Department of Education, pre-K and early childhood education, career-technical education in schools, AI in schools, college athletics (NIL, player eligibility). **Has frames** |
+| `env.energy` | Energy production | oil and gas, "energy dominance", renewables, nuclear, offshore wind, biofuels, the grid, resource development (ANWR) |
+| `env.water` | Water | drought, water supply and rights, rivers and lakes (Colorado River, Great Salt Lake), drinking water, PFAS, lead pipes |
+| `env.environment` | Climate / environment | climate change, air pollution, public lands, forests and wildfire management, conservation, wildlife |
+| `tech.data_centers` | Data centers | siting, tax breaks, power and water use, moratoria, Big Tech money. **Has frames** |
+| `tech.ai` | Artificial intelligence | any AI policy talk. **Has frames** |
+| `tech.online` | Social media / online / crypto | kids' online safety, social-media harms, phones in schools (also `edu`), Big Tech platforms, crypto and digital assets |
+| `disasters` | Disasters / emergency response | FEMA, wildfires, hurricanes (Helene), floods, preparedness and recovery |
+| `foreign.iran` | Iran war | strikes, war powers, votes to continue or end the war, its cost |
+| `foreign.israel_gaza` | Israel / Gaza | incl. antisemitism framed around Israel |
+| `foreign.other` | Other foreign policy / defense | China (CCP threats, farmland and land purchases, espionage, competition, China trade), Ukraine and Russia, Venezuela, NATO, military readiness, defense spending |
+| `veterans` | Veterans / service members | VA, benefits, military pay and families, service academies. A candidate's *own* service is biography: no topic (rule 11) |
+| `guns` | Guns | the Second Amendment, gun violence |
+| `culture.gender` | Transgender issues | girls' sports, gender care for minors, "men in women's spaces" |
+| `culture.other` | Other culture war | DEI, CRT, "woke", religion and religious liberty, book bans, antisemitism at home, LGBTQ rights |
+| `agri_rural` | Agriculture / rural | farm bill, farm aid, biofuels (also `env.energy`), meatpacker concentration, fisheries, rural development |
+| `infrastructure` | Infrastructure | roads, bridges, transit, broadband, airports, delivered federal funding (`local_reference` marks the local angle) |
+| `tribal` | Tribal / Native affairs | sovereignty, Indian Health Service, tribal lands, Native Hawaiian issues, boarding-school history |
+| `other` | Other issue | fill `other_note` (e.g. postal service) |
+
+### Frames
+
+Frames split a many-sided issue into *how* it is discussed, without splitting the topic. Salience is counted at the topic; frames answer "which argument?". Tag every frame that applies. A frame names the argument, not the side: a candidate for vouchers and one against them both get `choice`.
+
+| Topic | Frame | What it covers |
+|---|---|---|
+| `tech.ai` | `jobs` | AI replacing or changing work; training; "careers AI can't replace" |
+| `tech.ai` | `safety` | guardrails, frontier-model risk, audits, accountability of AI companies, federal framework vs. state laws |
+| `tech.ai` | `race_china` | winning the AI race, national security, innovation, cutting AI regulation |
+| `tech.ai` | `consumer_harm` | harms to people: algorithmic pricing and rent-fixing, AI insurance denials, voice-clone scams, deepfake nudes, AI surveillance |
+| `tech.ai` | `kids` | chatbots and children, AI in schools |
+| `tech.ai` | `elections` | deepfakes, AI misinformation, AI in campaigns |
+| `tech.ai` | `other` | anything else (e.g. using AI to cut government waste) |
+| `tech.data_centers` | `bills` | ratepayers paying for grid and power costs |
+| `tech.data_centers` | `water` | water use and supply |
+| `tech.data_centers` | `land_local` | farmland, siting, local consent, moratoria |
+| `tech.data_centers` | `tax_breaks` | incentives, abatements, secret deals and NDAs, Big Tech donations |
+| `tech.data_centers` | `jobs_investment` | jobs, tax base and investment as a *benefit* |
+| `tech.data_centers` | `energy_supply` | building more generation to power them |
+| `tech.data_centers` | `other` | anything else |
+| `edu` | `choice` | vouchers, education savings accounts, charter schools, tax-credit scholarships, "money follows the student", opting into the federal scholarship tax credit; for or against |
+| `edu` | `parents_rights` | parental rights, a Parents' Bill of Rights, curriculum transparency, parental notification and consent, opt-ins and opt-outs |
+| `edu` | `curriculum_culture` | what schools teach about race, gender and values: CRT, DEI, "woke" or "indoctrination", gender ideology, explicit books, book bans, patriotic education; either side. Also tag `culture.*` |
+| `edu` | `funding_pay` | public-school funding and funding formulas, teacher pay, shortages and retention, merit pay, "fully fund our schools" |
+| `edu` | `achievement` | reading and math, literacy and phonics, test scores and standards, learning loss, classroom discipline, phones in schools |
+| `edu` | `higher_ed` | tuition, student debt, Pell grants, free community college, campus policy (DEI, antisemitism, speech) |
+| `edu` | `cte` | career-technical education, trades and apprenticeships in schools (also `econ.jobs`, rule 13) |
+| `edu` | `early` | pre-K and early childhood education |
+| `edu` | `federal_role` | abolishing or defending the Department of Education, local control vs. federal involvement |
+| `edu` | `other` | anything else (e.g. school safety, special education) |
+
+## Boundary rules (tie-breaks)
+
+When two topics compete, apply the first matching rule. Co-labeling is allowed wherever both genuinely apply.
+
+1. **Cost of living:** tag the specific `col.*` leaf when that cost is named (housing, utilities, gas, child care, tariffs). General "costs" talk and grocery or food prices → `col.inflation`.
+2. **Health costs stay in `hc.*`:** premiums, drug prices and "health care costs" in general → `hc.care`; Medicaid → `hc.medicaid`; Medicare and Social Security → `hc.medicare_ss`. None of them go in `col.*`.
+3. **Taxes vs. spending:** revenue → `econ.taxes`; outlays, waste, debt and the size of government → `econ.spending`.
+   - Fraud in government programs → `econ.spending`. Fraud against consumers → `econ.corporate`.
+   - "Defund the police" and "defund/abolish ICE" are fights over policing and enforcement, usually a rallying cry against the other side. They go to `safety.crime` / `imm.enforcement`, not `econ.spending`.
+4. **Corporate power vs. corruption:**
+   - Concentrated wealth or corporate power, and practices that cheat buyers (gouging, fees, scams) → `econ.corporate`. That includes "holding Wall Street accountable", and tax breaks or loopholes for corporations or the very rich (→ `econ.taxes` + `econ.corporate`).
+   - Officials profiting, or money buying influence → `dem.corruption`.
+5. **Scandals:** money or abuse of office (pay-to-play, reimbursements, insider trading) → `dem.corruption`, with target `opponent`. Personal conduct, extremism or lying get no topic: tone and the `opponent` target carry them.
+6. **Immigration vs. crime:** ICE, deportation and sanctuary policies → `imm.enforcement`, even when framed as "criminal illegal aliens". Drug smuggling at the border → both `imm.border` and `safety.crime`.
+7. **Drugs:** trafficking and fentanyl supply → `safety.crime`. Addiction treatment and overdose prevention → `hc.care`. Opioid settlements → both.
+8. **Data centers:** always `tech.data_centers` plus its frames. Add `col.utilities` only when bills or rates are mentioned, and `env.water` only when water is.
+9. **AI vs. online:** anything AI-specific → `tech.ai`, including chatbots harming kids (frame `kids`). AI in schools (instruction, AI literacy, AI-made tests, AI tutors) → `tech.ai` (frame `kids`) + `edu`. Social media or kids online without AI → `tech.online`.
+10. **Iran and gas:** war tied to fuel prices → `foreign.iran` + `col.gas`, with blame `iran_war`.
+11. **Service:** the candidate's own military service is biography: no topic. Policy for veterans or troops → `veterans`.
+12. **Campaign content gets no topic:** biography (including the running mate's), events and tours, thanks, GOTV and voter registration, debates, polls and fundraising totals, endorsements, holidays and commemorations. So do lines of values or vision that aren't about an issue ("fighting for working families", "Idaho values", "new leadership") and alignment as the message ("stands with President Trump", "flip the House"), which is recorded in `targets` instead. An item made only of such content has an empty topic list.
+13. **Workforce training:** → `econ.jobs`, plus `edu` (frame `cte`) when it happens in schools.
+14. **Property taxes:** → `econ.taxes` only.
+15. **Privacy:** when privacy or surveillance is the point, add `dem.governance`, even inside `tech.*` items (e.g. an AI-nudification ban, or Flock cameras).
+16. **China and farmland:** China or other foreign buyers of farmland → `foreign.other` + `agri_rural`.
+17. **Pre-K vs. child care:** pre-K and early childhood education → `edu` (frame `early`); the cost and availability of child care → `col.childcare`; both when both.
+18. **Girls' sports:** trans athletes and "protect girls' sports" → `culture.gender` only, unless the item also discusses school policy beyond sports.
+19. **Phones in schools:** → `tech.online` + `edu` (frame `achievement`).

@@ -1,0 +1,272 @@
+{
+ "type": "object",
+ "properties": {
+  "items": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "item_id": {
+      "type": "string"
+     },
+     "usable": {
+      "type": "string",
+      "enum": [
+       "own",
+       "prompted",
+       "third_party",
+       "no_content"
+      ]
+     },
+     "topics": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "enum": [
+        "col.inflation",
+        "col.housing",
+        "col.utilities",
+        "col.gas",
+        "col.childcare",
+        "col.tariffs",
+        "econ.jobs",
+        "econ.labor",
+        "econ.taxes",
+        "econ.spending",
+        "econ.corporate",
+        "hc.care",
+        "hc.medicaid",
+        "hc.medicare_ss",
+        "hc.public_health",
+        "safety_net",
+        "imm.border",
+        "imm.enforcement",
+        "imm.reform",
+        "safety.crime",
+        "safety.guard",
+        "abortion",
+        "dem.corruption",
+        "dem.elections",
+        "dem.governance",
+        "dem.epstein",
+        "edu",
+        "env.energy",
+        "env.water",
+        "env.environment",
+        "tech.data_centers",
+        "tech.ai",
+        "tech.online",
+        "disasters",
+        "foreign.iran",
+        "foreign.israel_gaza",
+        "foreign.other",
+        "veterans",
+        "guns",
+        "culture.gender",
+        "culture.other",
+        "agri_rural",
+        "infrastructure",
+        "tribal",
+        "other"
+       ]
+      }
+     },
+     "other_note": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "frames": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "topic": {
+         "type": "string",
+         "enum": [
+          "tech.ai",
+          "tech.data_centers",
+          "edu"
+         ]
+        },
+        "frame": {
+         "type": "string",
+         "enum": [
+          "achievement",
+          "bills",
+          "choice",
+          "consumer_harm",
+          "cte",
+          "curriculum_culture",
+          "early",
+          "elections",
+          "energy_supply",
+          "federal_role",
+          "funding_pay",
+          "higher_ed",
+          "jobs",
+          "jobs_investment",
+          "kids",
+          "land_local",
+          "other",
+          "parents_rights",
+          "race_china",
+          "safety",
+          "tax_breaks",
+          "water"
+         ]
+        }
+       },
+       "required": [
+        "topic",
+        "frame"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "tone": {
+      "anyOf": [
+       {
+        "type": "string",
+        "enum": [
+         "promote",
+         "contrast",
+         "attack",
+         "none"
+        ]
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "targets": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "target": {
+         "type": "string",
+         "enum": [
+          "trump",
+          "trump_admin",
+          "biden_harris",
+          "opponent",
+          "dem_party",
+          "gop_party",
+          "dem_leaders",
+          "gop_leaders",
+          "musk_doge",
+          "corporations",
+          "washington_elites",
+          "state_gov",
+          "other"
+         ]
+        },
+        "stance": {
+         "type": "string",
+         "enum": [
+          "pos",
+          "neg",
+          "neutral"
+         ]
+        }
+       },
+       "required": [
+        "target",
+        "stance"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "blame": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "topic": {
+         "type": "string",
+         "enum": [
+          "col.inflation",
+          "col.housing",
+          "col.utilities",
+          "col.gas",
+          "col.childcare",
+          "col.tariffs",
+          "econ.jobs",
+          "econ.labor",
+          "econ.taxes",
+          "econ.spending",
+          "econ.corporate",
+          "hc.care",
+          "hc.medicaid",
+          "hc.medicare_ss",
+          "hc.public_health"
+         ]
+        },
+        "blamed": {
+         "type": "string",
+         "enum": [
+          "trump_admin",
+          "tariffs",
+          "iran_war",
+          "biden_harris",
+          "dem_party",
+          "gop_party",
+          "congress",
+          "opponent",
+          "state_gov",
+          "corporations",
+          "data_centers",
+          "other"
+         ]
+        }
+       },
+       "required": [
+        "topic",
+        "blamed"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "local_reference": {
+      "type": "boolean"
+     },
+     "credit_claim": {
+      "type": "boolean"
+     },
+     "is_fundraising_ask": {
+      "type": "boolean"
+     },
+     "note": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "item_id",
+     "usable",
+     "topics",
+     "other_note",
+     "frames",
+     "tone",
+     "targets",
+     "blame",
+     "local_reference",
+     "credit_claim",
+     "is_fundraising_ask",
+     "note"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "required": [
+  "items"
+ ],
+ "additionalProperties": false
+}

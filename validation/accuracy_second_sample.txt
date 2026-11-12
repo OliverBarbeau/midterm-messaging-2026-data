@@ -1,0 +1,64 @@
+left out of the website:R frame: wv-sen-shelley-moore-capito (her 25 capito.senate.gov passages left the corpus on 2026-10-14 (data_quality #3); 2 campaign passages remain, under 5)
+round 2: 114 of 150 items labeled
+
+== x: 38 Democratic and 38 Republican items; called the campaign's own words by hand: D 28/38, R 26/38
+  topics, all: precision 0.76, recall 0.57, F1 0.66
+  topics, D  : precision 0.74, recall 0.60, F1 0.66
+  topics, R  : precision 0.79, recall 0.56, F1 0.65
+  precision gap, D - R: -0.05 (95%: -0.22 to +0.13)
+  recall gap, D - R: +0.04 (95%: -0.15 to +0.22)
+
+  area                               found/of D       R  false tags D, R |  published D / R |              corrected D              corrected R | gap D - R, corrected
+  Economy and taxes                       3/7     8/11         2, 0      |   12.1% / 19.9% |   17.3% ( 6.8% to 30.5%)   27.8% (19.9% to 35.7%) | -10.5% (-26.3% to  +5.3%)
+  Cost of living                          6/8     2/3          1, 1      |   18.2% / 12.2% |   20.8% (12.9% to 31.3%)   12.2% ( 4.3% to 20.1%) |  +8.6% ( -2.0% to +19.1%)
+  Economy or cost of living              10/14    9/12         0, 0      |   26.8% / 26.0% |   37.3% (29.4% to 47.9%)   33.9% (26.0% to 44.4%) |  +3.4% ( -9.7% to +16.6%)
+  Health care and Social Security         3/3     2/3          0, 1      |   10.2% /  5.5% |   10.2% ( 2.3% to 18.1%)    5.5% ( 0.0% to 13.4%) |  +4.6% ( -3.2% to +12.5%)
+  Immigration                             0/0     2/3          0, 0      |    1.7% /  3.7% |    1.7% ( 0.0% to  9.6%)    6.3% ( 0.0% to 11.6%) |  -4.6% (-12.5% to +11.2%)
+  Crime and public safety                 0/0     3/3          0, 1      |    3.3% /  8.8% |    3.3% ( 0.0% to 11.2%)    6.1% ( 0.9% to 14.0%) |  -2.9% (-18.7% to  +5.0%)
+  abortion (exploratory)                  0/0     0/0          0, 0      |    1.3% /  0.5% |    1.3% ( 0.0% to  9.2%)    0.5% ( 0.0% to  8.4%) |  +0.8% (-15.0% to +16.5%)
+  agri_rural (exploratory)                1/1     1/1          0, 0      |    2.9% /  3.1% |    2.9% ( 0.0% to 10.8%)    3.1% ( 0.0% to 11.0%) |  -0.2% (-16.0% to +15.6%)
+  culture (exploratory)                   1/3     3/7          0, 0      |    1.1% /  2.5% |    6.4% ( 0.0% to 14.3%)   13.1% ( 5.2% to 23.6%) |  -6.7% (-19.9% to  +3.8%)
+  dem (exploratory)                       2/3     4/7          2, 2      |   13.9% / 12.4% |   11.2% ( 0.7% to 19.1%)   15.0% ( 4.5% to 25.5%) |  -3.7% (-19.5% to +12.1%)
+  disasters (exploratory)                 1/1     0/0          0, 0      |    1.3% /  0.9% |    1.3% ( 0.0% to  9.2%)    0.9% ( 0.0% to  8.8%) |  +0.4% (-15.4% to +16.2%)
+  edu (exploratory)                       2/3     1/2          1, 0      |    4.0% /  3.4% |    4.0% ( 0.0% to 11.9%)    6.0% ( 0.0% to 11.2%) |  -2.0% (-12.5% to  +5.9%)
+  env (exploratory)                       2/2     1/1          1, 1      |    2.7% /  5.0% |    0.1% ( 0.0% to  8.0%)    2.3% ( 0.0% to 10.2%) |  -2.3% (-10.2% to  +5.6%)
+  foreign (exploratory)                   1/1     1/1          0, 0      |    5.9% /  2.7% |    5.9% ( 0.0% to 13.8%)    2.7% ( 0.0% to 10.6%) |  +3.1% (-12.6% to +18.9%)
+  guns (exploratory)                      0/0     0/0          0, 0      |    0.4% /  0.4% |    0.4% ( 0.0% to  8.3%)    0.4% ( 0.0% to  8.3%) |  -0.0% (-15.8% to +15.8%)
+  infrastructure (exploratory)            1/3     0/2          0, 0      |    1.2% /  2.0% |    6.5% ( 0.0% to 14.4%)    7.3% ( 0.0% to 15.1%) |  -0.8% (-11.3% to  +9.8%)
+  other (exploratory)                     0/0     0/0          0, 0      |    0.3% /  0.3% |    0.3% ( 0.0% to  8.2%)    0.3% ( 0.0% to  8.2%) |  -0.0% (-15.8% to +15.8%)
+  public_health (exploratory)             1/2     0/0          0, 0      |    0.5% /  0.5% |    3.1% ( 0.0% to  8.4%)    0.5% ( 0.0% to  8.4%) |  +2.7% (-13.1% to +10.6%)
+  safety_net (exploratory)                0/1     0/0          0, 0      |    1.7% /  0.4% |    4.3% ( 0.0% to  9.6%)    0.4% ( 0.0% to  8.3%) |  +3.9% (-11.9% to +11.8%)
+  tech (exploratory)                      5/5     0/1          0, 0      |    3.8% /  1.5% |    3.8% ( 0.0% to 11.7%)    4.2% ( 0.0% to  9.4%) |  -0.4% ( -8.3% to +15.4%)
+  tribal (exploratory)                    0/0     0/0          0, 0      |    0.6% /  0.0% |    0.6% ( 0.0% to  8.5%)    0.0% ( 0.0% to  7.9%) |  +0.6% (-15.2% to +16.4%)
+  veterans (exploratory)                  0/1     1/2          0, 0      |    0.9% /  1.4% |    3.5% ( 0.0% to  8.8%)    4.1% ( 0.0% to  9.3%) |  -0.6% ( -8.5% to  +7.3%)
+
+== website: 19 Democratic and 19 Republican items; called the campaign's own words by hand: D 14/19, R 13/19
+  topics, all: precision 0.57, recall 0.48, F1 0.52
+  topics, D  : precision 0.53, recall 0.44, F1 0.48
+  topics, R  : precision 0.63, recall 0.54, F1 0.58
+  precision gap, D - R: -0.10 (95%: -0.42 to +0.25)
+  recall gap, D - R: -0.10 (95%: -0.32 to +0.16)
+
+  area                               found/of D       R  false tags D, R |  published D / R |              corrected D              corrected R | gap D - R, corrected
+  Economy and taxes                       6/12    6/10         4, 1      |   40.2% / 42.2% |   50.8% (19.2% to 82.3%)   58.0% (36.9% to 79.0%) |  -7.2% (-44.0% to +34.9%)
+  Cost of living                          5/8     4/4          4, 0      |   41.5% / 24.8% |   36.2% ( 9.9% to 62.5%)   24.8% ( 9.0% to 40.6%) | +11.4% (-14.9% to +37.7%)
+  Economy or cost of living              10/13    6/10         5, 1      |   57.9% / 48.8% |   47.4% (21.1% to 73.7%)   64.6% (43.5% to 85.6%) | -17.2% (-54.0% to +19.7%)
+  Health care and Social Security         6/9     0/2          2, 1      |   36.7% / 16.0% |   42.0% (20.9% to 68.3%)   21.3% ( 5.5% to 42.3%) | +20.7% ( -5.6% to +52.3%)
+  Immigration                             0/0     1/1          3, 1      |   10.2% / 21.0% |   -5.6% ( 0.0% to 10.2%)   15.8% ( 5.2% to 31.5%) | -21.4% (-42.4% to  -0.3%)
+  Crime and public safety                 1/2     2/3          1, 2      |   11.2% / 21.2% |   11.2% ( 0.0% to 27.0%)   15.9% ( 0.1% to 31.7%) |  -4.7% (-25.8% to +16.4%)
+  abortion (exploratory)                  2/4     0/0          1, 0      |   10.9% /  3.2% |   16.2% ( 0.4% to 32.0%)    3.2% ( 0.0% to 19.0%) | +13.0% ( -2.8% to +28.8%)
+  agri_rural (exploratory)                1/2     1/1          0, 1      |    8.3% / 10.5% |   13.6% ( 0.0% to 24.1%)    5.2% ( 0.0% to 21.0%) |  +8.3% (-23.2% to +24.1%)
+  culture (exploratory)                   1/3     1/2          0, 0      |    2.9% /  9.2% |   13.5% ( 0.0% to 29.2%)   14.4% ( 0.0% to 24.9%) |  -1.0% (-16.8% to +14.8%)
+  dem (exploratory)                       3/4     3/4          4, 3      |   29.7% / 21.6% |   14.0% ( 0.0% to 35.0%)   11.1% ( 0.0% to 32.1%) |  +2.9% (-23.5% to +34.4%)
+  disasters (exploratory)                 1/1     0/0          1, 0      |    2.4% /  2.2% |   -2.9% ( 0.0% to 12.9%)    2.2% ( 0.0% to 18.0%) |  -5.1% (-20.9% to +26.5%)
+  edu (exploratory)                       4/5     0/2          2, 0      |   16.4% / 14.6% |   11.2% ( 0.0% to 27.0%)   25.1% ( 9.3% to 40.9%) | -13.9% (-35.0% to  +7.1%)
+  env (exploratory)                       1/2     2/2          2, 0      |   20.0% / 18.2% |   14.7% ( 0.0% to 30.5%)   18.2% ( 2.4% to 34.0%) |  -3.5% (-19.3% to +12.3%)
+  foreign (exploratory)                   2/3     1/4          1, 0      |    9.6% /  8.3% |    9.6% ( 0.0% to 25.4%)   24.1% ( 8.3% to 39.9%) | -14.5% (-35.6% to  +6.6%)
+  guns (exploratory)                      1/1     0/0          2, 0      |    4.1% /  4.9% |   -6.4% ( 0.0% to  9.4%)    4.9% ( 0.0% to 20.7%) | -11.3% (-27.1% to +20.3%)
+  infrastructure (exploratory)            1/2     0/1          1, 1      |    8.2% /  5.6% |    8.2% ( 0.0% to 24.0%)    5.6% ( 0.0% to 21.4%) |  +2.6% (-18.5% to +23.6%)
+  other (exploratory)                     0/0     0/0          0, 0      |    0.4% /  0.0% |    0.4% ( 0.0% to 16.1%)    0.0% ( 0.0% to 15.8%) |  +0.4% (-31.2% to +31.9%)
+  public_health (exploratory)             0/6     0/0          0, 1      |    2.7% /  2.9% |   34.3% (13.2% to 55.3%)   -2.3% ( 0.0% to 13.5%) | +36.6% ( +5.0% to +62.9%)
+  safety_net (exploratory)                0/0     0/0          1, 1      |    6.1% /  1.9% |    0.8% ( 0.0% to 16.6%)   -3.4% ( 0.0% to 12.4%) |  +4.1% (-11.6% to +19.9%)
+  tech (exploratory)                      1/1     1/1          1, 1      |    9.9% /  7.3% |    4.7% ( 0.0% to 20.5%)    2.0% ( 0.0% to 17.8%) |  +2.7% (-13.1% to +18.4%)
+  tribal (exploratory)                    0/0     0/0          0, 0      |    1.1% /  0.2% |    1.1% ( 0.0% to 16.9%)    0.2% ( 0.0% to 16.0%) |  +0.9% (-30.7% to +32.5%)
+  veterans (exploratory)                  2/4     2/4          1, 0      |    8.3% / 11.1% |   13.5% ( 0.0% to 29.3%)   21.6% ( 5.8% to 37.4%) |  -8.1% (-29.1% to +13.0%)

@@ -1,0 +1,665 @@
+{
+ "labeler": "claude-sonnet-5",
+ "prompt_version": "p1-b617b8fe",
+ "codebook_version": "v1.4",
+ "as_published": {
+  "items": 210,
+  "content_items": 173,
+  "topic_micro_f1": 0.648,
+  "by_party": {
+   "D": {
+    "items": 89,
+    "topic_micro_f1": 0.635
+   },
+   "R": {
+    "items": 84,
+    "topic_micro_f1": 0.66
+   }
+  },
+  "by_channel": {
+   "bluesky": {
+    "D": {
+     "items": 14,
+     "topic_micro_f1": 0.759
+    }
+   },
+   "website": {
+    "D": {
+     "items": 33,
+     "topic_micro_f1": 0.618
+    },
+    "R": {
+     "items": 43,
+     "topic_micro_f1": 0.662
+    }
+   },
+   "x": {
+    "D": {
+     "items": 28,
+     "topic_micro_f1": 0.667
+    },
+    "R": {
+     "items": 26,
+     "topic_micro_f1": 0.659
+    }
+   },
+   "youtube": {
+    "D": {
+     "items": 14,
+     "topic_micro_f1": 0.634
+    },
+    "R": {
+     "items": 15,
+     "topic_micro_f1": 0.651
+    }
+   }
+  },
+  "topics": {
+   "col.inflation": {
+    "n": 45,
+    "tp": 28,
+    "fp": 5
+   },
+   "col.housing": {
+    "n": 19,
+    "tp": 14,
+    "fp": 3
+   },
+   "col.utilities": {
+    "n": 14,
+    "tp": 10,
+    "fp": 1
+   },
+   "col.gas": {
+    "n": 9,
+    "tp": 9,
+    "fp": 1
+   },
+   "col.childcare": {
+    "n": 18,
+    "tp": 7,
+    "fp": 0
+   },
+   "col.tariffs": {
+    "n": 3,
+    "tp": 2,
+    "fp": 1
+   },
+   "econ.jobs": {
+    "n": 33,
+    "tp": 12,
+    "fp": 4
+   },
+   "econ.labor": {
+    "n": 39,
+    "tp": 3,
+    "fp": 1
+   },
+   "econ.taxes": {
+    "n": 37,
+    "tp": 29,
+    "fp": 5
+   },
+   "econ.spending": {
+    "n": 20,
+    "tp": 8,
+    "fp": 3
+   },
+   "econ.corporate": {
+    "n": 27,
+    "tp": 6,
+    "fp": 2
+   },
+   "hc.care": {
+    "n": 33,
+    "tp": 22,
+    "fp": 3
+   },
+   "hc.medicaid": {
+    "n": 5,
+    "tp": 5,
+    "fp": 0
+   },
+   "hc.medicare_ss": {
+    "n": 14,
+    "tp": 11,
+    "fp": 1
+   },
+   "hc.public_health": {
+    "n": 18,
+    "tp": 1,
+    "fp": 0
+   },
+   "safety_net": {
+    "n": 2,
+    "tp": 1,
+    "fp": 3
+   },
+   "imm.border": {
+    "n": 14,
+    "tp": 10,
+    "fp": 0
+   },
+   "imm.enforcement": {
+    "n": 15,
+    "tp": 12,
+    "fp": 2
+   },
+   "imm.reform": {
+    "n": 10,
+    "tp": 3,
+    "fp": 0
+   },
+   "safety.crime": {
+    "n": 20,
+    "tp": 14,
+    "fp": 4
+   },
+   "safety.guard": {
+    "n": 1,
+    "tp": 0,
+    "fp": 0
+   },
+   "abortion": {
+    "n": 10,
+    "tp": 7,
+    "fp": 1
+   },
+   "dem.corruption": {
+    "n": 32,
+    "tp": 17,
+    "fp": 8
+   },
+   "dem.elections": {
+    "n": 11,
+    "tp": 9,
+    "fp": 1
+   },
+   "dem.governance": {
+    "n": 25,
+    "tp": 6,
+    "fp": 6
+   },
+   "dem.epstein": {
+    "n": 1,
+    "tp": 0,
+    "fp": 0
+   },
+   "edu": {
+    "n": 37,
+    "tp": 17,
+    "fp": 6
+   },
+   "env.energy": {
+    "n": 12,
+    "tp": 9,
+    "fp": 2
+   },
+   "env.water": {
+    "n": 10,
+    "tp": 6,
+    "fp": 1
+   },
+   "env.environment": {
+    "n": 9,
+    "tp": 6,
+    "fp": 1
+   },
+   "tech.data_centers": {
+    "n": 10,
+    "tp": 10,
+    "fp": 0
+   },
+   "tech.ai": {
+    "n": 6,
+    "tp": 5,
+    "fp": 0
+   },
+   "tech.online": {
+    "n": 5,
+    "tp": 2,
+    "fp": 2
+   },
+   "disasters": {
+    "n": 8,
+    "tp": 5,
+    "fp": 0
+   },
+   "foreign.iran": {
+    "n": 10,
+    "tp": 3,
+    "fp": 0
+   },
+   "foreign.israel_gaza": {
+    "n": 6,
+    "tp": 3,
+    "fp": 0
+   },
+   "foreign.other": {
+    "n": 22,
+    "tp": 10,
+    "fp": 3
+   },
+   "veterans": {
+    "n": 21,
+    "tp": 12,
+    "fp": 1
+   },
+   "guns": {
+    "n": 5,
+    "tp": 5,
+    "fp": 1
+   },
+   "culture.gender": {
+    "n": 12,
+    "tp": 11,
+    "fp": 2
+   },
+   "culture.other": {
+    "n": 25,
+    "tp": 7,
+    "fp": 0
+   },
+   "agri_rural": {
+    "n": 16,
+    "tp": 10,
+    "fp": 1
+   },
+   "infrastructure": {
+    "n": 20,
+    "tp": 9,
+    "fp": 0
+   },
+   "tribal": {
+    "n": 3,
+    "tp": 2,
+    "fp": 0
+   },
+   "other": {
+    "n": 1,
+    "tp": 0,
+    "fp": 0
+   },
+   "col": {
+    "n": 63,
+    "tp": 48,
+    "fp": 7
+   },
+   "econ": {
+    "n": 89,
+    "tp": 53,
+    "fp": 4
+   },
+   "hc": {
+    "n": 50,
+    "tp": 30,
+    "fp": 2
+   },
+   "imm": {
+    "n": 24,
+    "tp": 18,
+    "fp": 1
+   },
+   "safety": {
+    "n": 21,
+    "tp": 14,
+    "fp": 4
+   },
+   "dem": {
+    "n": 48,
+    "tp": 32,
+    "fp": 11
+   },
+   "env": {
+    "n": 26,
+    "tp": 20,
+    "fp": 3
+   },
+   "tech": {
+    "n": 20,
+    "tp": 17,
+    "fp": 2
+   },
+   "foreign": {
+    "n": 30,
+    "tp": 16,
+    "fp": 1
+   },
+   "culture": {
+    "n": 36,
+    "tp": 18,
+    "fp": 1
+   }
+  }
+ },
+ "public_health_apart": {
+  "items": 210,
+  "content_items": 173,
+  "topic_micro_f1": 0.648,
+  "by_party": {
+   "D": {
+    "items": 89,
+    "topic_micro_f1": 0.635
+   },
+   "R": {
+    "items": 84,
+    "topic_micro_f1": 0.66
+   }
+  },
+  "by_channel": {
+   "bluesky": {
+    "D": {
+     "items": 14,
+     "topic_micro_f1": 0.759
+    }
+   },
+   "website": {
+    "D": {
+     "items": 33,
+     "topic_micro_f1": 0.618
+    },
+    "R": {
+     "items": 43,
+     "topic_micro_f1": 0.662
+    }
+   },
+   "x": {
+    "D": {
+     "items": 28,
+     "topic_micro_f1": 0.667
+    },
+    "R": {
+     "items": 26,
+     "topic_micro_f1": 0.659
+    }
+   },
+   "youtube": {
+    "D": {
+     "items": 14,
+     "topic_micro_f1": 0.634
+    },
+    "R": {
+     "items": 15,
+     "topic_micro_f1": 0.651
+    }
+   }
+  },
+  "topics": {
+   "col.inflation": {
+    "n": 45,
+    "tp": 28,
+    "fp": 5
+   },
+   "col.housing": {
+    "n": 19,
+    "tp": 14,
+    "fp": 3
+   },
+   "col.utilities": {
+    "n": 14,
+    "tp": 10,
+    "fp": 1
+   },
+   "col.gas": {
+    "n": 9,
+    "tp": 9,
+    "fp": 1
+   },
+   "col.childcare": {
+    "n": 18,
+    "tp": 7,
+    "fp": 0
+   },
+   "col.tariffs": {
+    "n": 3,
+    "tp": 2,
+    "fp": 1
+   },
+   "econ.jobs": {
+    "n": 33,
+    "tp": 12,
+    "fp": 4
+   },
+   "econ.labor": {
+    "n": 39,
+    "tp": 3,
+    "fp": 1
+   },
+   "econ.taxes": {
+    "n": 37,
+    "tp": 29,
+    "fp": 5
+   },
+   "econ.spending": {
+    "n": 20,
+    "tp": 8,
+    "fp": 3
+   },
+   "econ.corporate": {
+    "n": 27,
+    "tp": 6,
+    "fp": 2
+   },
+   "hc.care": {
+    "n": 33,
+    "tp": 22,
+    "fp": 3
+   },
+   "hc.medicaid": {
+    "n": 5,
+    "tp": 5,
+    "fp": 0
+   },
+   "hc.medicare_ss": {
+    "n": 14,
+    "tp": 11,
+    "fp": 1
+   },
+   "hc.public_health": {
+    "n": 18,
+    "tp": 1,
+    "fp": 0
+   },
+   "safety_net": {
+    "n": 2,
+    "tp": 1,
+    "fp": 3
+   },
+   "imm.border": {
+    "n": 14,
+    "tp": 10,
+    "fp": 0
+   },
+   "imm.enforcement": {
+    "n": 15,
+    "tp": 12,
+    "fp": 2
+   },
+   "imm.reform": {
+    "n": 10,
+    "tp": 3,
+    "fp": 0
+   },
+   "safety.crime": {
+    "n": 20,
+    "tp": 14,
+    "fp": 4
+   },
+   "safety.guard": {
+    "n": 1,
+    "tp": 0,
+    "fp": 0
+   },
+   "abortion": {
+    "n": 10,
+    "tp": 7,
+    "fp": 1
+   },
+   "dem.corruption": {
+    "n": 32,
+    "tp": 17,
+    "fp": 8
+   },
+   "dem.elections": {
+    "n": 11,
+    "tp": 9,
+    "fp": 1
+   },
+   "dem.governance": {
+    "n": 25,
+    "tp": 6,
+    "fp": 6
+   },
+   "dem.epstein": {
+    "n": 1,
+    "tp": 0,
+    "fp": 0
+   },
+   "edu": {
+    "n": 37,
+    "tp": 17,
+    "fp": 6
+   },
+   "env.energy": {
+    "n": 12,
+    "tp": 9,
+    "fp": 2
+   },
+   "env.water": {
+    "n": 10,
+    "tp": 6,
+    "fp": 1
+   },
+   "env.environment": {
+    "n": 9,
+    "tp": 6,
+    "fp": 1
+   },
+   "tech.data_centers": {
+    "n": 10,
+    "tp": 10,
+    "fp": 0
+   },
+   "tech.ai": {
+    "n": 6,
+    "tp": 5,
+    "fp": 0
+   },
+   "tech.online": {
+    "n": 5,
+    "tp": 2,
+    "fp": 2
+   },
+   "disasters": {
+    "n": 8,
+    "tp": 5,
+    "fp": 0
+   },
+   "foreign.iran": {
+    "n": 10,
+    "tp": 3,
+    "fp": 0
+   },
+   "foreign.israel_gaza": {
+    "n": 6,
+    "tp": 3,
+    "fp": 0
+   },
+   "foreign.other": {
+    "n": 22,
+    "tp": 10,
+    "fp": 3
+   },
+   "veterans": {
+    "n": 21,
+    "tp": 12,
+    "fp": 1
+   },
+   "guns": {
+    "n": 5,
+    "tp": 5,
+    "fp": 1
+   },
+   "culture.gender": {
+    "n": 12,
+    "tp": 11,
+    "fp": 2
+   },
+   "culture.other": {
+    "n": 25,
+    "tp": 7,
+    "fp": 0
+   },
+   "agri_rural": {
+    "n": 16,
+    "tp": 10,
+    "fp": 1
+   },
+   "infrastructure": {
+    "n": 20,
+    "tp": 9,
+    "fp": 0
+   },
+   "tribal": {
+    "n": 3,
+    "tp": 2,
+    "fp": 0
+   },
+   "other": {
+    "n": 1,
+    "tp": 0,
+    "fp": 0
+   },
+   "col": {
+    "n": 63,
+    "tp": 48,
+    "fp": 7
+   },
+   "econ": {
+    "n": 89,
+    "tp": 53,
+    "fp": 4
+   },
+   "hc": {
+    "n": 40,
+    "tp": 29,
+    "fp": 2
+   },
+   "imm": {
+    "n": 24,
+    "tp": 18,
+    "fp": 1
+   },
+   "safety": {
+    "n": 21,
+    "tp": 14,
+    "fp": 4
+   },
+   "dem": {
+    "n": 48,
+    "tp": 32,
+    "fp": 11
+   },
+   "env": {
+    "n": 26,
+    "tp": 20,
+    "fp": 3
+   },
+   "tech": {
+    "n": 20,
+    "tp": 17,
+    "fp": 2
+   },
+   "foreign": {
+    "n": 30,
+    "tp": 16,
+    "fp": 1
+   },
+   "culture": {
+    "n": 36,
+    "tp": 18,
+    "fp": 1
+   }
+  }
+ }
+}

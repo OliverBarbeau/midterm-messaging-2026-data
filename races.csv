@@ -1,0 +1,148 @@
+race_id,office,state,district,special,kalshi_title,sabato_rating,sabato_score_d,sabato_as_of,pres_2024_margin_d,pres_2024_geo
+gov-AK,gov,AK,,,Alaska Governor winner?,likely,2.0,2026-11-02,-13.14,AK
+gov-AL,gov,AL,,,Alabama Governor winner?,likely,-2.0,2026-11-02,-30.59,AL
+gov-AR,gov,AR,,,Arkansas Governor winner?,safe,-3.0,2026-11-02,-30.64,AR
+gov-AZ,gov,AZ,,,Arizona Governor winner?,likely,2.0,2026-11-02,-5.53,AZ
+gov-CA,gov,CA,,,California Governor winner?,safe,3.0,2026-11-02,20.14,CA
+gov-CO,gov,CO,,,Colorado Governor winner?,safe,3.0,2026-11-02,10.99,CO
+gov-CT,gov,CT,,,Connecticut Governor winner?,safe,3.0,2026-11-02,14.51,CT
+gov-FL,gov,FL,,,Florida Governor winner?,lean,-1.0,2026-11-02,-13.1,FL
+gov-GA,gov,GA,,,Georgia Governor winner?,lean,1.0,2026-11-02,-2.19,GA
+gov-HI,gov,HI,,,Hawaii Governor winner?,safe,3.0,2026-11-02,23.1,HI
+gov-IA,gov,IA,,,Iowa Governor winner?,lean,1.0,2026-11-02,-13.26,IA
+gov-ID,gov,ID,,,Idaho Governor winner?,safe,-3.0,2026-11-02,-36.5,ID
+gov-IL,gov,IL,,,Illinois Governor winner?,safe,3.0,2026-11-02,10.98,IL
+gov-KS,gov,KS,,,Kansas Governor winner?,lean,-1.0,2026-11-02,-16.12,KS
+gov-MA,gov,MA,,,Massachusetts Governor winner?,safe,3.0,2026-11-02,25.34,MA
+gov-MD,gov,MD,,,Maryland Governor winner?,safe,3.0,2026-11-02,28.75,MD
+gov-ME,gov,ME,,,Maine Governor winner?,likely,2.0,2026-11-02,6.94,ME
+gov-MI,gov,MI,,,Michigan Governor winner?,likely,2.0,2026-11-02,-1.41,MI
+gov-MN,gov,MN,,,Minnesota Governor winner?,safe,3.0,2026-11-02,4.26,MN
+gov-NE,gov,NE,,,Nebraska Governor winner?,likely,-2.0,2026-11-02,-20.57,NE
+gov-NH,gov,NH,,,New Hampshire Governor winner?,lean,-1.0,2026-11-02,2.79,NH
+gov-NM,gov,NM,,,New Mexico Governor winner?,safe,3.0,2026-11-02,6.0,NM
+gov-NV,gov,NV,,,Nevada Governor winner?,lean,1.0,2026-11-02,-3.1,NV
+gov-NY,gov,NY,,,New York Governor winner?,safe,3.0,2026-11-02,12.52,NY
+gov-OH,gov,OH,,,Ohio Governor winner?,lean,1.0,2026-11-02,-11.21,OH
+gov-OK,gov,OK,,,Oklahoma Governor winner?,likely,-2.0,2026-11-02,-34.26,OK
+gov-OR,gov,OR,,,Oregon Governor winner?,lean,1.0,2026-11-02,14.4,OR
+gov-PA,gov,PA,,,Pennsylvania Governor winner?,safe,3.0,2026-11-02,-1.71,PA
+gov-RI,gov,RI,,,Rhode Island Governor winner?,safe,3.0,2026-11-02,13.85,RI
+gov-SC,gov,SC,,,South Carolina Governor winner?,safe,-3.0,2026-11-02,-17.87,SC
+gov-SD,gov,SD,,,South Dakota Governor winner?,safe,-3.0,2026-11-02,-29.19,SD
+gov-TN,gov,TN,,,Tennessee Governor winner?,safe,-3.0,2026-11-02,-29.72,TN
+gov-TX,gov,TX,,,Texas Governor winner?,lean,-1.0,2026-11-02,-13.69,TX
+gov-VT,gov,VT,,,Vermont Governor winner?,lean,-1.0,2026-11-02,31.77,VT
+gov-WI,gov,WI,,,Wisconsin Governor winner?,lean,1.0,2026-11-02,-0.86,WI
+gov-WY,gov,WY,,,Wyoming Governor winner?,safe,-3.0,2026-11-02,-46.22,WY
+house-AK-AL,house,AK,AL,,Alaska House winner?,lean,-1.0,2026-11-02,-13.14,AK-AL
+house-AZ-01,house,AZ,01,,AZ-01 House winner?,lean,1.0,2026-11-02,-3.11,AZ-01
+house-AZ-02,house,AZ,02,,AZ-02 House winner?,lean,-1.0,2026-11-02,-14.97,AZ-02
+house-AZ-06,house,AZ,06,,AZ-06 House winner?,lean,1.0,2026-11-02,-0.75,AZ-06
+house-CA-03,house,CA,03,,CA-03 House winner?,safe,3.0,2026-03-02,10.16,CA-03
+house-CA-09,house,CA,09,,CA-09 House winner?,safe,3.0,2026-02-05,11.42,CA-09
+house-CA-13,house,CA,13,,CA-13 House winner?,likely,2.0,2026-11-02,0.37,CA-13
+house-CA-21,house,CA,21,,CA-21 House winner?,likely,2.0,2026-11-02,5.97,CA-21
+house-CA-22,house,CA,22,,CA-22 House winner?,lean,1.0,2026-11-02,-1.85,CA-22
+house-CA-27,house,CA,27,,CA-27 House winner?,safe,3.0,2026-02-05,9.73,CA-27
+house-CA-41,house,CA,41,,CA-41 House winner?,,,,14.2,CA-41
+house-CA-45,house,CA,45,,CA-45 House winner?,likely,2.0,2026-11-02,3.94,CA-45
+house-CA-47,house,CA,47,,CA-47 House winner?,safe,3.0,2026-02-05,10.08,CA-47
+house-CA-49,house,CA,49,,CA-49 House winner?,safe,3.0,2026-02-05,12.1,CA-49
+house-CO-03,house,CO,03,,CO-03 House winner?,lean,-1.0,2026-11-02,-9.73,CO-03
+house-CO-08,house,CO,08,,CO-08 House winner?,lean,1.0,2026-11-02,-1.83,CO-08
+house-CT-05,house,CT,05,,CT-05 House winner?,safe,3.0,2026-07-30,5.59,CT-05
+house-FL-13,house,FL,13,,FL-13 House winner?,lean,-1.0,2026-11-02,-13.32,FL-13
+house-FL-23,house,FL,23,,FL-23 House winner?,safe,3.0,2026-05-04,13.73,FL-23
+house-IA-01,house,IA,01,,IA-01 House winner?,lean,1.0,2026-11-02,-8.47,IA-01
+house-IA-03,house,IA,03,,IA-03 House winner?,lean,1.0,2026-11-02,-4.41,IA-03
+house-IL-17,house,IL,17,,IL-17 House winner?,safe,3.0,2026-03-26,4.74,IL-17
+house-IN-01,house,IN,01,,IN-01 House winner?,likely,2.0,2026-11-02,0.4,IN-01
+house-IN-07,house,IN,07,,IN-07 House winner?,safe,3.0,2025-07-15,41.46,IN-07
+house-ME-02,house,ME,02,,ME-02 House winner?,lean,-1.0,2026-11-02,-9.05,ME-02
+house-MI-03,house,MI,03,,MI-03 House winner?,safe,3.0,2026-11-02,7.84,MI-03
+house-MI-04,house,MI,04,,MI-04 House winner?,lean,1.0,2026-11-02,-5.54,MI-04
+house-MI-07,house,MI,07,,MI-07 House winner?,lean,1.0,2026-11-02,-1.28,MI-07
+house-MI-08,house,MI,08,,MI-08 House winner?,likely,2.0,2026-11-02,-1.98,MI-08
+house-MI-10,house,MI,10,,MI-10 House winner?,lean,1.0,2026-11-02,-6.55,MI-10
+house-MN-02,house,MN,02,,MN-02 House winner?,likely,2.0,2026-11-02,5.83,MN-02
+house-MO-05,house,MO,05,,MO-05 House winner?,safe,3.0,2026-09-10,23.12,MO-05
+house-MT-01,house,MT,01,,MT-01 House winner?,lean,1.0,2026-11-02,-11.55,MT-01
+house-NC-01,house,NC,01,,NC-01 House winner?,lean,1.0,2026-11-02,-11.55,NC-01
+house-NC-11,house,NC,11,,NC-11 House winner?,lean,1.0,2026-11-02,-9.5,NC-11
+house-NE-02,house,NE,02,,NE-02 House winner?,likely,2.0,2026-11-02,4.62,NE-02
+house-NH-01,house,NH,01,,NH-01 House winner?,likely,2.0,2026-11-02,2.0,NH-01
+house-NJ-05,house,NJ,05,,NJ-05 House winner?,safe,3.0,2026-03-26,1.51,NJ-05
+house-NJ-07,house,NJ,07,,NJ-07 House winner?,lean,1.0,2026-11-02,-1.17,NJ-07
+house-NJ-09,house,NJ,09,,NJ-09 House winner?,likely,2.0,2026-11-02,-1.14,NJ-09
+house-NM-02,house,NM,02,,NM-02 House winner?,lean,1.0,2026-11-02,-1.81,NM-02
+house-NV-01,house,NV,01,,NV-01 House winner?,likely,2.0,2026-11-02,2.26,NV-01
+house-NV-03,house,NV,03,,NV-03 House winner?,likely,2.0,2026-11-02,-0.74,NV-03
+house-NV-04,house,NV,04,,NV-04 House winner?,likely,2.0,2026-11-02,2.32,NV-04
+house-NY-03,house,NY,03,,NY-03 House winner?,lean,1.0,2026-11-02,-4.28,NY-03
+house-NY-04,house,NY,04,,NY-04 House winner?,likely,2.0,2026-11-02,1.28,NY-04
+house-NY-17,house,NY,17,,NY-17 House winner?,lean,-1.0,2026-11-02,0.56,NY-17
+house-NY-18,house,NY,18,,NY-18 House winner?,safe,3.0,2026-03-26,3.33,NY-18
+house-NY-19,house,NY,19,,NY-19 House winner?,likely,2.0,2026-11-02,1.78,NY-19
+house-NY-22,house,NY,22,,NY-22 House winner?,safe,3.0,2026-03-26,7.65,NY-22
+house-OH-01,house,OH,01,,OH-01 House winner?,likely,2.0,2026-11-02,-2.6,OH-01
+house-OH-09,house,OH,09,,OH-09 House winner?,lean,1.0,2026-11-02,-10.58,OH-09
+house-OH-13,house,OH,13,,OH-13 House winner?,likely,2.0,2026-11-02,3.29,OH-13
+house-OR-05,house,OR,05,,OR-05 House winner?,safe,3.0,2026-10-27,8.54,OR-05
+house-PA-01,house,PA,01,,PA-01 House winner?,lean,1.0,2026-11-02,0.32,PA-01
+house-PA-07,house,PA,07,,PA-07 House winner?,lean,1.0,2026-11-02,-3.2,PA-07
+house-PA-08,house,PA,08,,PA-08 House winner?,lean,1.0,2026-11-02,-8.5,PA-08
+house-PA-10,house,PA,10,,PA-10 House winner?,lean,1.0,2026-11-02,-5.23,PA-10
+house-PA-17,house,PA,17,,PA-17 House winner?,safe,3.0,2026-03-26,5.5,PA-17
+house-TX-09,house,TX,09,,TX-09 House winner?,likely,-2.0,2026-11-02,-19.79,TX-09
+house-TX-15,house,TX,15,,TX-15 House winner?,lean,1.0,2026-11-02,-17.87,TX-15
+house-TX-28,house,TX,28,,TX-28 House winner?,lean,1.0,2026-11-02,-10.38,TX-28
+house-TX-32,house,TX,32,,TX-32 House winner?,safe,-3.0,2026-11-02,-17.79,TX-32
+house-TX-34,house,TX,34,,TX-34 House winner?,lean,1.0,2026-11-02,-10.14,TX-34
+house-TX-35,house,TX,35,,TX-35 House winner?,lean,1.0,2026-11-02,-10.46,TX-35
+house-UT-01,house,UT,01,,UT-01 House winner?,safe,3.0,2025-11-11,23.63,UT-01
+house-UT-02,house,UT,02,,UT-02 House winner?,safe,-3.0,2025-11-11,-29.0,UT-02
+house-UT-03,house,UT,03,,UT-03 House winner?,safe,-3.0,2025-11-11,-41.38,UT-03
+house-VA-01,house,VA,01,,VA-01 House winner?,lean,1.0,2026-11-02,-4.94,VA-01
+house-VA-02,house,VA,02,,VA-02 House winner?,lean,1.0,2026-11-02,-0.25,VA-02
+house-VA-07,house,VA,07,,VA-07 House winner?,safe,3.0,2026-11-02,2.86,VA-07
+house-VA-10,house,VA,10,,VA-10 House winner?,safe,3.0,2026-04-21,8.36,VA-10
+house-WA-03,house,WA,03,,WA-03 House winner?,lean,1.0,2026-11-02,-3.3,WA-03
+house-WA-08,house,WA,08,,WA-08 House winner?,safe,3.0,2025-11-19,5.78,WA-08
+house-WI-01,house,WI,01,,WI-01 House winner?,lean,-1.0,2026-11-02,-4.51,WI-01
+house-WI-03,house,WI,03,,WI-03 House winner?,lean,1.0,2026-11-02,-7.4,WI-03
+senate-AK,senate,AK,,,Alaska Senate winner?,lean,1.0,2026-11-02,-13.14,AK
+senate-AL,senate,AL,,,Alabama Senate winner?,safe,-3.0,2026-11-02,-30.59,AL
+senate-AR,senate,AR,,,Arkansas Senate winner?,safe,-3.0,2026-11-02,-30.64,AR
+senate-CO,senate,CO,,,Colorado Senate winner?,safe,3.0,2026-11-02,10.99,CO
+senate-DE,senate,DE,,,Delaware Senate winner?,safe,3.0,2026-11-02,14.74,DE
+senate-FL-special,senate,FL,,yes,Florida Senate winner?,likely,-2.0,2026-11-02,-13.1,FL
+senate-GA,senate,GA,,,Georgia Senate winner?,likely,2.0,2026-11-02,-2.19,GA
+senate-IA,senate,IA,,,Iowa Senate winner?,lean,-1.0,2026-11-02,-13.26,IA
+senate-ID,senate,ID,,,Idaho Senate winner?,safe,-3.0,2026-11-02,-36.5,ID
+senate-IL,senate,IL,,,Illinois Senate winner?,safe,3.0,2026-11-02,10.98,IL
+senate-KS,senate,KS,,,Kansas Senate winner?,lean,1.0,2026-11-02,-16.12,KS
+senate-KY,senate,KY,,,Kentucky Senate winner?,safe,-3.0,2026-11-02,-30.55,KY
+senate-LA,senate,LA,,,Louisiana Senate winner?,lean,-1.0,2026-11-02,-22.01,LA
+senate-MA,senate,MA,,,Massachusetts Senate winner?,safe,3.0,2026-11-02,25.34,MA
+senate-ME,senate,ME,,,Maine Senate winner?,lean,1.0,2026-11-02,6.94,ME
+senate-MI,senate,MI,,,Michigan Senate winner?,lean,1.0,2026-11-02,-1.41,MI
+senate-MN,senate,MN,,,Minnesota Senate winner?,likely,2.0,2026-11-02,4.26,MN
+senate-MS,senate,MS,,,Mississippi Senate winner?,likely,-2.0,2026-11-02,-22.89,MS
+senate-MT,senate,MT,,,Montana Senate winner?,safe,-3.0,2026-11-02,-19.93,MT
+senate-NC,senate,NC,,,North Carolina Senate winner?,likely,2.0,2026-11-02,-3.22,NC
+senate-NE,senate,NE,,,Nebraska Senate winner?,lean,-1.0,2026-11-02,-20.57,NE
+senate-NH,senate,NH,,,New Hampshire Senate winner?,likely,2.0,2026-11-02,2.79,NH
+senate-NJ,senate,NJ,,,New Jersey Senate winner?,safe,3.0,2026-11-02,5.91,NJ
+senate-NM,senate,NM,,,New Mexico Senate winner?,safe,3.0,2026-11-02,6.0,NM
+senate-OH-special,senate,OH,,yes,Ohio Senate winner?,lean,1.0,2026-11-02,-11.21,OH
+senate-OK,senate,OK,,,Oklahoma Senate winner?,safe,-3.0,2026-11-02,-34.26,OK
+senate-OR,senate,OR,,,Oregon Senate winner?,safe,3.0,2026-11-02,14.4,OR
+senate-RI,senate,RI,,,Rhode Island Senate winner?,safe,3.0,2026-11-02,13.85,RI
+senate-SC,senate,SC,,,South Carolina Senate winner?,lean,-1.0,2026-11-02,-17.87,SC
+senate-SD,senate,SD,,,South Dakota Senate winner?,safe,-3.0,2026-11-02,-29.19,SD
+senate-TN,senate,TN,,,Tennessee Senate winner?,safe,-3.0,2026-11-02,-29.72,TN
+senate-TX,senate,TX,,,Texas Senate winner?,lean,1.0,2026-11-02,-13.69,TX
+senate-VA,senate,VA,,,Virginia Senate winner?,safe,3.0,2026-11-02,5.81,VA
+senate-WV,senate,WV,,,West Virginia Senate winner?,safe,-3.0,2026-11-02,-41.87,WV
+senate-WY,senate,WY,,,Wyoming Senate winner?,safe,-3.0,2026-11-02,-46.22,WY
